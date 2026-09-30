@@ -8,9 +8,9 @@ Target: Omarchy `4.0.4-1` Quattro, x86_64, Qt 6 and Quickshell from the installe
 - QML lint using the installed `qs.Ui` and `qs.Commons` imports: no errors; existing dynamic-property warnings remain.
 - The hosted menu renders with fictional state through `demo/run`; its capture restores the configuration byte for byte, workspace, cursor and plugin installation.
 - The “Layouts & profiles” action opens the existing hidden hyprmoncfg panel from the Display menu; repeated opening and Escape dismissal were exercised on the physical desktop.
-- The hyprmoncfg icon can have zero size while its editor and persistent preview service remain loaded.
+- The hyprmoncfg icon can have zero size and opacity while its editor and persistent preview service remain loaded, including after a full shell restart. Keeping the anchor item visible is necessary for the panel to map.
 
-Install-from-public-Git, update and removal evidence is recorded against the final candidate in the release record. This file describes the feature test scope; a source commit ID is recorded externally to avoid referring to its own commit recursively.
+Installation from the public Git repository, update from the initial checkout to the launch-ordering fix, enablement replacing the stock menu, and removal restoring the stock menu were exercised on the live desktop. The prior custom menu and original configuration were restored afterward. Exact source identities are recorded in the release record. This file describes the feature test scope; a source commit ID is recorded externally to avoid referring to its own commit recursively.
 
 The menu action is inherited from the working user-owned Display clone. The separate upstream plugin change passed 161 JavaScript tests and 21 offscreen QML tests. The native Omarchy integration passed 28 focused monitor-model assertions, including unavailable/disabled/service-only editor cases. Those upstream suites cover their own repositories, not certification of this companion.
 

@@ -23,7 +23,7 @@ For a new hyprmoncfg installation, this temporary fork includes the optional ico
 omarchy plugin add https://github.com/keylimesoda/omarchy-hyprmoncfg --enable
 ```
 
-If hyprmoncfg is already installed, do not add a second copy with the same ID. Wait for PR #21 and update the existing installation, or review and fast-forward a clean checkout to the fork’s fixed commit `697b44a91e695d797bf272ef68ca1a222146c714`. Keep backups of any local changes.
+If hyprmoncfg is already installed, do not add a second copy with the same ID. Wait for PR #21 and update the existing installation, or review and fast-forward a clean checkout to the fork’s fixed commit `7d95fc9d947ccdb89ed1f5129bedce42ab4c8803`. Keep backups of any local changes.
 
 Install this companion:
 
