@@ -16,19 +16,40 @@ Panel {
   // permits — needed for the brightness + state methods below.
   property string layoutsError: ""
 
+  property bool layoutsExited: false
+  property bool layoutsOutputReady: false
+  property int layoutsExitCode: -1
+
+  function finishLayoutsLaunch() {
+    if (!root.layoutsExited || !root.layoutsOutputReady) return
+    if (root.layoutsExitCode === 0 && layoutsLaunchOutput.text.trim() === "ok") root.close()
+    else root.layoutsError = "Could not open layouts. Check that hyprmoncfg is enabled."
+  }
+
   function openLayouts() {
     if (layoutsLaunch.running) return
     root.layoutsError = ""
+    root.layoutsExited = false
+    root.layoutsOutputReady = false
+    root.layoutsExitCode = -1
     layoutsLaunch.running = true
   }
 
   Process {
     id: layoutsLaunch
     command: ["omarchy-shell", "shell", "summon", "crmne.hyprmoncfg", "{}"]
-    stdout: StdioCollector { id: layoutsLaunchOutput; waitForEnd: true }
+    stdout: StdioCollector {
+      id: layoutsLaunchOutput
+      waitForEnd: true
+      onStreamFinished: {
+        root.layoutsOutputReady = true
+        root.finishLayoutsLaunch()
+      }
+    }
     onExited: function(exitCode) {
-      if (exitCode === 0 && layoutsLaunchOutput.text.trim() === "ok") root.close()
-      else root.layoutsError = "Could not open layouts. Check that hyprmoncfg is enabled."
+      root.layoutsExited = true
+      root.layoutsExitCode = exitCode
+      root.finishLayoutsLaunch()
     }
   }
 
