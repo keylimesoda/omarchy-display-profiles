@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+# capture.py drives omarchy-shell and hyprctl through the existing single shell.
+# Python owns collision-resistant mktemp storage, backup and cleanup.
+# Its finally handler plus these trap-forwarded signals restore the live shell.
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+exec python3 "$root/demo/capture.py" "$@"

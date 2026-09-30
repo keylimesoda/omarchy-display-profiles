@@ -1,0 +1,25 @@
+{
+  "brightness": 65,
+  "internal": "eDP-1",
+  "external": "DP-1",
+  "focused": "DP-1",
+  "scale": "1",
+  "displays": [
+    {
+      "name": "eDP-1",
+      "enabled": true,
+      "focused": false,
+      "width": 1920,
+      "height": 1080,
+      "scale": 1
+    },
+    {
+      "name": "DP-1",
+      "enabled": true,
+      "focused": true,
+      "width": 2560,
+      "height": 1440,
+      "scale": 1
+    }
+  ]
+}

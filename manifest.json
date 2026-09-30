@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.keylimesoda.display-profiles",
+  "name": "Display & Profiles",
+  "version": "0.1.0",
+  "author": "keylimesoda",
+  "license": "MIT",
+  "description": "Omarchy Display controls with a shortcut to hyprmoncfg layouts and profiles.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Display & Profiles",
+    "description": "Omarchy Display controls with a shortcut to hyprmoncfg layouts and profiles.",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {},
+    "schema": []
+  },
+  "omarchy": {
+    "clonedFrom": "omarchy.monitor"
+  }
+}
